@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>随笔详情 — 清风小筑</title>
+  <meta name="description" content="随笔详情，阅读完整内容。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="essay-detail">
+
+  <!-- Reading Progress -->
+  <div class="reading-progress" id="reading-progress"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="main-nav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">清风小筑</a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">首页</a>
+        <a href="essays.html">随笔</a>
+        <a href="gallery.html">影集</a>
+        <a href="music.html">音乐</a>
+        <a href="about.html">关于</a>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">🌙</button>
+      </div>
+      <button class="nav-menu-btn" id="nav-menu-btn" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="page-content">
+    <div class="container">
+      <div id="essay-detail" class="essay-detail">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="回到顶部">↑</button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 清风小筑 · 用心记录每一刻</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

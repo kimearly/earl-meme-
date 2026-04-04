@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>清风小筑 — 文字与光影的栖息地</title>
+  <meta name="description" content="一个关于随笔、摄影与生活感悟的个人博客。在这里，用文字记录日常，用镜头捕捉光影。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+
+  <!-- Navigation -->
+  <nav class="nav" id="main-nav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">清风小筑</a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">首页</a>
+        <a href="essays.html">随笔</a>
+        <a href="gallery.html">影集</a>
+        <a href="music.html">音乐</a>
+        <a href="about.html">关于</a>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">🌙</button>
+      </div>
+      <button class="nav-menu-btn" id="nav-menu-btn" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Typewriter Banner (Standalone Top Section) -->
+  <section class="typewriter-banner" id="typewriter-banner">
+    <div class="typewriter-inner">
+      <div class="typewriter-content-wrapper">
+        <span class="typewriter-text" id="typewriter-text"></span><span class="typewriter-cursor" id="typewriter-cursor">|</span>
+      </div>
+      <a class="typewriter-link" id="typewriter-link" href="#">阅读全文 →</a>
+    </div>
+  </section>
+
+  <!-- Main Content (Two Columns) -->
+  <main class="page-content">
+    
+    <!-- The Split Layout (Image Left, Text Right) -->
+    <div class="container main-layout-container">
+      
+      <aside class="sidebar-media">
+        <div class="typewriter-media">
+          <img id="typewriter-img" src="" alt="随笔插图">
+        </div>
+      </aside>
+
+      <!-- Articles Section (2/3 Right: Text content) -->
+      <div class="main-articles">
+
+      <!-- Recent Essays -->
+      <section class="fade-in" style="margin-bottom: 64px;">
+        <div class="section-title">
+          <h2>最近随笔</h2>
+          <a href="essays.html" class="more-link">查看全部 →</a>
+        </div>
+        <div id="recent-essays" class="essay-list stagger-children">
+          <!-- Rendered by JS -->
+        </div>
+      </section>
+        </div>
+      </div> <!-- End main-articles -->
+    </div> <!-- End main-layout-container -->
+
+    <div class="container wide-container">
+      <!-- Recent Photos -->
+      <section class="fade-in recent-gallery-section">
+        <div class="section-title" style="justify-content: center; margin-bottom: 32px;">
+          <h2 style="font-size: 2rem;">最近影像</h2>
+          <a href="gallery.html" class="more-link" style="position: absolute; right: 0;">查看全部 →</a>
+        </div>
+        <div id="recent-gallery" class="gallery-grid" style="columns: 3;">
+          <!-- Rendered by JS -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <button class="lightbox-nav lightbox-prev" onclick="prevLightbox()">‹</button>
+    <div class="lightbox-content">
+      <img src="" alt="预览图片">
+      <p class="lightbox-caption"></p>
+    </div>
+    <button class="lightbox-nav lightbox-next" onclick="nextLightbox()">›</button>
+  </div>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="回到顶部">↑</button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 清风小筑 · 用心记录每一刻</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

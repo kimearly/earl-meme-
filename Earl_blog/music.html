@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>音乐 — 清风小筑</title>
+  <meta name="description" content="一些在某个时刻与我产生共鸣的旋律，记录聆听时的心情与故事。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="music">
+
+  <!-- Navigation -->
+  <nav class="nav" id="main-nav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">清风小筑</a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">首页</a>
+        <a href="essays.html">随笔</a>
+        <a href="gallery.html">影集</a>
+        <a href="music.html">音乐</a>
+        <a href="about.html">关于</a>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">🌙</button>
+      </div>
+      <button class="nav-menu-btn" id="nav-menu-btn" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="page-content">
+    <div class="container">
+
+      <div class="page-header fade-in">
+        <h1>音乐</h1>
+        <p>某些旋律，是无法用语言描述的心情</p>
+      </div>
+
+      <!-- Now Playing Card -->
+      <section class="fade-in music-now-playing-section">
+        <div class="music-player-card" id="music-player-card">
+          <div class="music-player-cover-wrap">
+            <div class="music-player-cover" id="player-cover-bg">
+              <div class="music-vinyl" id="music-vinyl">
+                <div class="music-vinyl-inner"></div>
+              </div>
+            </div>
+          </div>
+          <div class="music-player-info">
+            <div class="music-player-meta">
+              <span class="music-now-label">正在播放</span>
+            </div>
+            <h2 class="music-player-title" id="player-title">—</h2>
+            <p class="music-player-artist" id="player-artist">—</p>
+            <p class="music-player-comment" id="player-comment"></p>
+
+            <!-- Progress -->
+            <div class="music-progress-wrap">
+              <span class="music-time" id="player-current">0:00</span>
+              <div class="music-progress-bar" id="progress-bar">
+                <div class="music-progress-fill" id="progress-fill"></div>
+                <div class="music-progress-thumb" id="progress-thumb"></div>
+              </div>
+              <span class="music-time" id="player-duration">0:00</span>
+            </div>
+
+            <!-- Controls -->
+            <div class="music-controls">
+              <button class="music-ctrl-btn" id="btn-shuffle" onclick="toggleShuffle()" aria-label="随机播放" title="随机">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
+              </button>
+              <button class="music-ctrl-btn music-ctrl-main" onclick="prevTrack()" aria-label="上一首">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+              </button>
+              <button class="music-ctrl-btn music-ctrl-play" id="btn-play" onclick="togglePlay()" aria-label="播放/暂停">
+                <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+              </button>
+              <button class="music-ctrl-btn music-ctrl-main" onclick="nextTrack()" aria-label="下一首">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+              </button>
+              <button class="music-ctrl-btn" id="btn-loop" onclick="toggleLoop()" aria-label="循环播放" title="循环">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+              </button>
+            </div>
+
+            <!-- Volume -->
+            <div class="music-volume-wrap">
+              <svg class="music-vol-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+              <input type="range" class="music-volume-slider" id="volume-slider" min="0" max="100" value="80" oninput="setVolume(this.value)">
+            </div>
+          </div>
+        </div>
+        <!-- Hidden audio element -->
+        <audio id="audio-player" preload="metadata"></audio>
+      </section>
+
+      <!-- Track List -->
+      <section class="fade-in" style="margin-top: 48px;">
+        <div class="section-title">
+          <h2>歌单</h2>
+        </div>
+        <div class="music-genre-tabs" id="genre-tabs">
+          <!-- Rendered by JS -->
+        </div>
+        <div class="music-track-list" id="track-list">
+          <!-- Rendered by JS -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="回到顶部">↑</button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 清风小筑 · 用心记录每一刻</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
